@@ -116,5 +116,8 @@ int main()
    cout << "Test Case: Negative Radians | Input: -1.5pi" << endl;
    angleTester1.setRadians(-1.5 * M_PI);
    angleTester1.display();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2135330a62b83ca703c47ab03aee2a64406d4d2c
 }
