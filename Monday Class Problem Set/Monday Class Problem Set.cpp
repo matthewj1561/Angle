@@ -1,7 +1,7 @@
-#define _USE_MATH_DEFINES  //FOR math constants
-
-#include <iostream>
-#include <cmath>     // FOR math constants
+#define _USE_MATH_DEFINES  //For math constants
+   
+#include <iostream>  // For cout
+#include <cmath>     // For math constants
 using namespace std;
 
 /*****************************************************************************
@@ -31,13 +31,7 @@ private:
    {
       double aDegrees = convertToDegrees(aRadians);
 
-      // Using floor
-      /*double degQuotient = aDegrees / 360.0;
-      double floorQuotient = floor(degQuotient);
-      double result = (degQuotient - floorQuotient) * 360.0;
-      return convertToRadians(result);*/
-
-      // Using fmod.
+      // fmod returns difference of the remainder multiplied by 360.0
       aDegrees = fmod(aDegrees, 360.0);
 
       // Finish normalizing for negative values
@@ -47,9 +41,8 @@ private:
       }
       return convertToRadians(aDegrees);
    }
+
 public:
-
-
    // Returns angle in degrees.
    double getDegrees() const
    {
@@ -83,7 +76,10 @@ public:
    }
 };
 
-
+/*************************************************************
+* MAIN
+* Test case drivers for testing the public functions of Angle.
+**************************************************************/
 int main()
 {
    // Run test cases
@@ -116,8 +112,4 @@ int main()
    cout << "Test Case: Negative Radians | Input: -1.5pi" << endl;
    angleTester1.setRadians(-1.5 * M_PI);
    angleTester1.display();
-<<<<<<< HEAD
-
-=======
->>>>>>> 2135330a62b83ca703c47ab03aee2a64406d4d2c
 }
