@@ -104,8 +104,4 @@ int main()
    cout << "Test Case: Negative Radians | Input: -1.5pi" << endl;
    angleTester1.setRadians(-1.5 * M_PI);
    angleTester1.display();
-
-   cout << "Normalize Test Case | Input: 3pi | Output: pi" << endl;
-   cout.precision(5);
-   cout << angleTester1.normalize(3 * M_PI) << "<-- Normalized Angle" << endl;
 }
