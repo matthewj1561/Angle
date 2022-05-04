@@ -32,14 +32,15 @@ public:
    {
       double aDegrees = convertToDegrees(aRadians);
       
-      // Using floor
-      /*double degQuotient = aDegrees / 360.0;
-      double floorQuotient = floor(degQuotient);
-      double result = (degQuotient - floorQuotient) * 360.0;
-      return convertToRadians(result);*/
-      
-      // Using fmod.
+      // fmod returns the remainder after dividing, then multiplies by 360.0
       aDegrees = fmod(aDegrees, 360.0);
+      
+      // Ensure the angle is positive.
+      if (aDegrees < 0)
+      {
+         aDegrees += 360.0;
+      }
+
       return convertToRadians(aDegrees);
    }
 
@@ -62,7 +63,7 @@ public:
       this->aRadians = normalize(convertToRadians(aDegrees));
    }
 
-   // Sets the angle radians.
+   // Sets the angle in radians.
    void setRadians(double aRadians)
    {
       this->aRadians = normalize(aRadians);
@@ -110,7 +111,16 @@ int main()
    angleTester1.setRadians(-4 * M_PI);
    angleTester1.display();
 
-   cout << "Normalize Test Case | Input: 3pi | Output: pi" << endl;
+   cout << "Test Case: Normalize -5 Degrees | Input: -5 deg | Output: 355 deg" << endl;
+   angleTester1.setDegrees(-5);
+   angleTester1.setRadians(angleTester1.normalize(angleTester1.getRadians()));
+   cout << "Normalized -5 deg: " << angleTester1.getDegrees() << " degrees" << endl << endl;
+
+   // Set precision for normalize Test Cases to see pi.
    cout.precision(5);
-   cout << angleTester1.normalize(3 * M_PI) << "<-- Normalized Angle" << endl;
+   cout << "Test Case: Normalize Positive | Input: 3pi | Output: pi" << endl;
+   cout << "Normalized 3pi: " << angleTester1.normalize(3.0 * M_PI) << endl << endl;
+
+   cout << "Test Case: Normalize Negative | Input: -5pi | Output: pi" << endl;
+   cout << "Normalized -5pi: " << angleTester1.normalize(-5.0 * M_PI) << endl << endl;
 }
