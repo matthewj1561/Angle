@@ -139,7 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="angle.cpp" />
     <ClCompile Include="Monday Class Problem Set.cpp" />
+    <ClCompile Include="angleTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="angle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
