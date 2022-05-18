@@ -13,6 +13,8 @@
 class Angle
 {
 private:
+
+
    double aRadians;
 
    // Converts from Radians to Degrees
@@ -27,13 +29,20 @@ private:
    double normalize(double aRadians) const;
 
 public:
+   // Default Constructor
+   Angle() : aRadians(0.0) {};
 
+   // Parameter Cnostructor
+   Angle(double iRadians) : aRadians(iRadians) {};
+
+   // Copy Constructor
+   Angle(const Angle & rhs) : aRadians(rhs.aRadians) {};
 
    // Returns angle in degrees.
-   double getDegrees() const{ return convertToDegrees(aRadians); }
+   double getDegrees() const { return convertToDegrees(aRadians); }
 
    // Returns angle in radians.
-   double getRadians() const{ return aRadians; }
+   double getRadians() const { return aRadians; }
 
    // Sets the angle in degrees.
    void setDegrees(double aDegrees)
