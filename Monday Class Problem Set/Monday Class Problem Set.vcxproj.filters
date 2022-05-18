@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Monday Class Problem Set.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="angle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
